@@ -1,0 +1,253 @@
+import java.awt.EventQueue;
+import java.awt.Window;
+import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+
+public class MyGUI {
+
+	private JFrame frame;
+	private JLayeredPane layeredPane;
+	private JPanel pnlHome;
+	private JPanel pnlEmployee;
+	private JPanel pnlTables;
+	private JPanel pnlInventory;
+	private JPanel pnlTickets;
+	private JButton btnHome;
+	private JButton btnHome_1;
+	private JButton btnHome_2;
+	private JButton btnHome_3;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MyGUI window = new MyGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public MyGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 810, 499);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		layeredPane = new JLayeredPane();
+		layeredPane.setBounds(0, 0, 794, 460);
+		frame.getContentPane().add(layeredPane);
+		
+		pnlHome = new JPanel();
+		pnlHome.setBounds(0, 0, 794, 460);
+		layeredPane.add(pnlHome);
+		
+		JButton btnEmployee = new JButton("Employee");
+		btnEmployee.setBounds(71, 23, 103, 36);
+		btnEmployee.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlEmployee);
+			}
+		});
+		pnlHome.setLayout(null);
+		pnlHome.add(btnEmployee);
+		
+		JButton btnTables = new JButton("Tables");
+		btnTables.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlTables);
+			}
+		});
+		btnTables.setBounds(244, 23, 103, 36);
+		pnlHome.add(btnTables);
+		
+		JButton btnInventory = new JButton("Inventory");
+		btnInventory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlInventory);
+			}
+		});
+		btnInventory.setBounds(417, 23, 103, 36);
+		pnlHome.add(btnInventory);
+		
+		JButton btnTickets = new JButton("Tickets");
+		btnTickets.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlTickets);
+			}
+		});
+		btnTickets.setBounds(587, 23, 103, 36);
+		pnlHome.add(btnTickets);
+		
+		JButton btnLogOut = new JButton("LogOut");
+		btnLogOut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnLogOut.setBounds(10, 413, 103, 36);
+		pnlHome.add(btnLogOut);
+		
+		pnlEmployee = new JPanel();
+		pnlEmployee.setBackground(Color.ORANGE);
+		pnlEmployee.setBounds(0, 0, 794, 460);
+		layeredPane.add(pnlEmployee);
+		pnlEmployee.setLayout(null);
+		
+		btnHome = new JButton("Home");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlHome);
+			}
+		});
+		btnHome.setBounds(0, 0, 97, 36);
+		pnlEmployee.add(btnHome);
+		
+		JLabel lblHireDate = new JLabel("Hire Date:");
+		lblHireDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblHireDate.setBounds(69, 47, 97, 43);
+		pnlEmployee.add(lblHireDate);
+		
+		JLabel lblWage = new JLabel("Wage:");
+		lblWage.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblWage.setBounds(69, 101, 97, 43);
+		pnlEmployee.add(lblWage);
+		
+		JLabel lblName = new JLabel("Name:");
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblName.setBounds(69, 161, 97, 43);
+		pnlEmployee.add(lblName);
+		
+		JLabel lblAge = new JLabel("Age:");
+		lblAge.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblAge.setBounds(69, 222, 97, 43);
+		pnlEmployee.add(lblAge);
+		
+		JLabel lblEmployeeID = new JLabel("Employee ID:");
+		lblEmployeeID.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblEmployeeID.setBounds(69, 276, 122, 43);
+		pnlEmployee.add(lblEmployeeID);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(31, 269, 734, 2);
+		pnlEmployee.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(31, 215, 734, 2);
+		pnlEmployee.add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(31, 155, 734, 2);
+		pnlEmployee.add(separator_2);
+		
+		JSeparator separator_3 = new JSeparator();
+		separator_3.setBounds(20, 88, 734, 2);
+		pnlEmployee.add(separator_3);
+		
+		textField = new JTextField();
+		textField.setBounds(252, 47, 177, 34);
+		pnlEmployee.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(252, 108, 177, 34);
+		pnlEmployee.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(252, 168, 177, 34);
+		pnlEmployee.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(252, 229, 177, 34);
+		pnlEmployee.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(252, 283, 177, 34);
+		pnlEmployee.add(textField_4);
+		
+		pnlTables = new JPanel();
+		pnlTables.setBackground(Color.GREEN);
+		pnlTables.setBounds(0, 0, 794, 460);
+		layeredPane.add(pnlTables);
+		pnlTables.setLayout(null);
+		
+		btnHome_1 = new JButton("Home");
+		btnHome_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlHome);
+			}
+		});
+		btnHome_1.setBounds(0, 0, 97, 36);
+		pnlTables.add(btnHome_1);
+		
+		pnlInventory = new JPanel();
+		pnlInventory.setBackground(Color.PINK);
+		pnlInventory.setBounds(0, 0, 794, 460);
+		layeredPane.add(pnlInventory);
+		pnlInventory.setLayout(null);
+		
+		btnHome_2 = new JButton("Home");
+		btnHome_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlHome);
+			}
+		});
+		btnHome_2.setBounds(0, 0, 97, 36);
+		pnlInventory.add(btnHome_2);
+		
+		pnlTickets = new JPanel();
+		pnlTickets.setBackground(Color.MAGENTA);
+		pnlTickets.setBounds(0, 0, 794, 460);
+		layeredPane.add(pnlTickets);
+		pnlTickets.setLayout(null);
+		
+		btnHome_3 = new JButton("Home");
+		btnHome_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Switch_Screen(pnlHome);
+			}
+		});
+		btnHome_3.setBounds(0, 0, 97, 36);
+		pnlTickets.add(btnHome_3);
+	}
+	
+	public void Switch_Screen(JPanel p) {
+		layeredPane.removeAll();
+		layeredPane.add(p);
+		layeredPane.repaint();
+		layeredPane.revalidate();
+	}
+}
