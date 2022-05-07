@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Batman\Desktop\Towson_Spring_2022\COSC457-Databases\Project\Project-Code\.metadata\.plugins\org.eclipse.jdt.core
+524819999.index
+3691333242.index
+3010240524.index
+713807724.index
+1865797976.index
